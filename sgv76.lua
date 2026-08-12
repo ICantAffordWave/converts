@@ -6,10 +6,6 @@ local args1 = {
 }
 remote01:FireServer(table.unpack(args1))
 task.wait(2.5)
-loadstring(game:HttpGet("https://raw.githubusercontent.com/Jskfhggjxu/My-Script/refs/heads/main/Cool-Reanimate.lua"))()
-print"Waiting for reanimate to load fully..."
-wait(7.5)
-print"Reanimate loaded"
 game:GetService("StarterGui"):SetCoreGuiEnabled(Enum.CoreGuiType.Health, false)
 print"Hided healthbar (fGUI element, not player healthbar(s) btw)"
 local Player = game:GetService("Players").LocalPlayer --<=== Replace With Your Name
@@ -507,7 +503,7 @@ function chatfunc(text,color,typet,font,timeex)
 		local txc = tcs:WaitForChild("TextChannels", 1)
 		local general = txc:WaitForChild("RBXGeneral", 1)
 		if txc and general and Chat == true then
-			general:SendAsync("SG (chat): "..text)
+		--	general:SendAsync("SG (chat): "..text)
 		end
 		local naeeym2 = Instance.new("BillboardGui",Character)
 		naeeym2.Size = UDim2.new(0,100,0,40)
