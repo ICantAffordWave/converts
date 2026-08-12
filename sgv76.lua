@@ -1,10 +1,4 @@
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
-local remote01 = ReplicatedStorage:WaitForChild("01_server")
-local args1 = {
-	"cmd";
-	"-gh 5316479641 5316549755 14130401546 5316539421 5268602207 5268555719 5268710380";
-}
-remote01:FireServer(table.unpack(args1))
 task.wait(2.5)
 game:GetService("StarterGui"):SetCoreGuiEnabled(Enum.CoreGuiType.Health, false)
 print"Hided healthbar (fGUI element, not player healthbar(s) btw)"
