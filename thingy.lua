@@ -1,3 +1,4 @@
+
 local G2L = {};
 
 -- StarterGui.no
@@ -20,7 +21,6 @@ G2L["2"]["Name"] = [[nonion]];
 -- StarterGui.no.nonion.TextLabel
 G2L["3"] = Instance.new("TextLabel", G2L["2"]);
 G2L["3"]["TextWrapped"] = true;
-G2L["3"]["TextStrokeTransparency"] = 0;
 G2L["3"]["BorderSizePixel"] = 0;
 G2L["3"]["TextSize"] = 38;
 G2L["3"]["TextScaled"] = true;
@@ -123,42 +123,69 @@ G2L["c"] = Instance.new("UICorner", G2L["b"]);
 G2L["c"]["CornerRadius"] = UDim.new(0, 3);
 
 
+-- StarterGui.no.nonion.reminder
+G2L["d"] = Instance.new("Frame", G2L["2"]);
+G2L["d"]["Visible"] = false;
+G2L["d"]["BorderSizePixel"] = 0;
+G2L["d"]["BackgroundColor3"] = Color3.fromRGB(26, 26, 26);
+G2L["d"]["Size"] = UDim2.new(1, 0, 0.12739, 0);
+G2L["d"]["Position"] = UDim2.new(0, 0, -0.18852, 0);
+G2L["d"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["d"]["Name"] = [[reminder]];
+
+
+-- StarterGui.no.nonion.reminder.TextLabel
+G2L["e"] = Instance.new("TextLabel", G2L["d"]);
+G2L["e"]["TextWrapped"] = true;
+G2L["e"]["BorderSizePixel"] = 0;
+G2L["e"]["TextSize"] = 14;
+G2L["e"]["TextScaled"] = true;
+G2L["e"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["e"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["e"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["e"]["BackgroundTransparency"] = 1;
+G2L["e"]["Size"] = UDim2.new(1, 0, 1, 0);
+G2L["e"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["e"]["Text"] = [[Wait 7.5 secounds for reanimate to load]];
+G2L["e"]["Position"] = UDim2.new(0, 0, -0, 0);
+
+
 -- StarterGui.no.LocalScript
-G2L["d"] = Instance.new("LocalScript", G2L["1"]);
+G2L["f"] = Instance.new("LocalScript", G2L["1"]);
 
 
 
 -- StarterGui.no.funnyholderthingy
-G2L["e"] = Instance.new("Frame", G2L["1"]);
-G2L["e"]["BorderSizePixel"] = 0;
-G2L["e"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["e"]["Size"] = UDim2.new(0.07294, 0, 0.05694, 0);
-G2L["e"]["Position"] = UDim2.new(0.14442, 0, 0.33631, 0);
-G2L["e"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["e"]["Name"] = [[funnyholderthingy]];
-G2L["e"]["BackgroundTransparency"] = 1;
+G2L["10"] = Instance.new("Frame", G2L["1"]);
+G2L["10"]["BorderSizePixel"] = 0;
+G2L["10"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["10"]["Size"] = UDim2.new(0.07294, 0, 0.05694, 0);
+G2L["10"]["Position"] = UDim2.new(0.14442, 0, 0.33631, 0);
+G2L["10"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["10"]["Name"] = [[funnyholderthingy]];
+G2L["10"]["BackgroundTransparency"] = 1;
 
 
 -- StarterGui.no.funnyholderthingy.TextButton
-G2L["f"] = Instance.new("TextButton", G2L["e"]);
-G2L["f"]["BorderSizePixel"] = 0;
-G2L["f"]["TextSize"] = 14;
-G2L["f"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["f"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["f"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["f"]["Size"] = UDim2.new(1, 0, 1, 0);
-G2L["f"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["11"] = Instance.new("TextButton", G2L["10"]);
+G2L["11"]["BorderSizePixel"] = 0;
+G2L["11"]["TextSize"] = 14;
+G2L["11"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["11"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["11"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["11"]["Size"] = UDim2.new(1, 0, 1, 0);
+G2L["11"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
 
 
 -- StarterGui.no.funnyholderthingy.TextButton.UICorner
-G2L["10"] = Instance.new("UICorner", G2L["f"]);
-G2L["10"]["CornerRadius"] = UDim.new(0, 3);
+G2L["12"] = Instance.new("UICorner", G2L["11"]);
+G2L["12"]["CornerRadius"] = UDim.new(0, 3);
 
 
--- StarterGui.no.funnyholderthingy.UIDrag
-G2L["11"] = Instance.new("LocalScript", G2L["e"]);
+-- StarterGui.no.funnyholderthingy.TextButton.UIDrag
+G2L["13"] = Instance.new("LocalScript", G2L["11"]);
 -- [ERROR] cannot convert Capabilities, please report to "https://github.com/uniquadev/GuiToLuaConverter/issues"
-G2L["11"]["Name"] = [[UIDrag]];
+G2L["13"]["Name"] = [[UIDrag]];
 
 
 -- StarterGui.no.nonion.UIDrag
@@ -204,16 +231,26 @@ local script = G2L["a"];
 end;
 task.spawn(C_a);
 -- StarterGui.no.LocalScript
-local function C_d()
-local script = G2L["d"];
+local function C_f()
+local script = G2L["f"];
 	local reanimated = false
 	local rancc = false
+	local nolol = false
 	local loadsrc = "https://raw.githubusercontent.com/Jskfhggjxu/My-Script/refs/heads/main/Cool-Reanimate.lua"
-	local scriptsrc = ""
-	local screengui = script.Parent
+	local scriptsrc = "https://raw.githubusercontent.com/ICantAffordWave/converts/refs/heads/main/sgv76.lua"
+	local antihatfallsrc = "https://raw.githubusercontent.com/franciscomilguel1802-ui/Anti-hat-fall-work/refs/heads/main/Work"
+	local screengui = script.Parent -- hmmmmm
+		local args2 = {
+			"cmd";
+			"-gh 5316479641 5316549755 14130401546 5316539421 5268602207 5268555719 5268710380";
+		}
+	screengui.ResetOnSpawn = false
 	local frame = screengui:WaitForChild("nonion")
+	local reminder = frame:WaitForChild("reminder")
+	local text = reminder:WaitForChild("TextLabel")
 	local frame2 = screengui:WaitForChild("funnyholderthingy")
 	local open = frame2:WaitForChild("TextButton")
+	local tweenservice = game:GetService("TweenService")
 	local ReplicatedStorage = game:GetService("ReplicatedStorage")
 	local remote01 = ReplicatedStorage:WaitForChild("01_server")
 	local plr = game:GetService("Players").LocalPlayer
@@ -222,27 +259,40 @@ local script = G2L["d"];
 		"-pd";
 		"-net";
 	}
+	local mainthread = nil
 	local threads = {}
 	local mouse = plr:GetMouse()
-	remote01:FireServer(table.unpack(args1))
+	local networkping = plr:GetNetworkPing()
 	local start, stop, reanimate, close = frame:WaitForChild("yessir"), frame:WaitForChild("nuhuh"), frame:WaitForChild("fairly"), frame:WaitForChild("close")
 	start.Visible = false
 	stop.Visible = false
+	frame.Visible = true
 	frame2.Visible = false
+	game:GetService("RunService").Heartbeat:Connect(function(dt)
+		networkping = dt * plr:GetNetworkPing()
+	end)
 	reanimate.Activated:Connect(function()
 		local yea, errlol = pcall(function() remote01:FireServer(table.unpack(args1)) end)
-		if yea then
+		local yea2, errlol = pcall(function() remote01:FireServer(table.unpack(args2)) end)
+		if yea and yea2 and nolol == false then
+			task.wait(3.25 * (math.clamp(networkping * 0.85, 1, math.huge)))
 			local yo, wut = pcall(function() 
-				table.insert(threads, task.spawn(function() loadstring(game:HttpGet(loadsrc))() end))
+				loadstring(game:HttpGet(loadsrc))()
 			end)
 			if yo then
+				nolol = true
+				print("ok")
+				reminder.Visible = true
+				task.wait(7.5)
+	            reminder.Visible = false
 				reanimated = true
 				reanimate.Visible = false
 				start.Visible = true
 				stop.Visible = false
 			else
 				warn("reanimate not worky: "..tostring(wut))
-			end
+				end
+		
 		else
 			warn("how: "..tostring(errlol))
 		end
@@ -253,7 +303,9 @@ local script = G2L["d"];
 		elseif rancc == true then
 			print("no 2")
 		else
-			local ran, result = pcall(function() table.insert(threads, task.spawn(function() loadstring(game:HttpGet(scriptsrc))() end)) end)
+			local ran, result = pcall(function() 
+				mainthread = task.spawn(function() loadstring(game:HttpGet(scriptsrc))() end)
+			end)
 			if ran then
 				rancc = true
 				start.Visible = false
@@ -268,8 +320,10 @@ local script = G2L["d"];
 		reanimated = false
 		start.Visible = false
 		stop.Visible = false
+		nolol = false
 		reanimate.Visible = true
 		-- solution
+		task.cancel(mainthread)
 		game:GetService("TeleportService"):TeleportToPlaceInstance(game.PlaceId, game.JobId, game.Players.LocalPlayer)
 	end)
 	close.Activated:Connect(function()
@@ -283,10 +337,10 @@ local script = G2L["d"];
 	end)
 	
 end;
-task.spawn(C_d);
--- StarterGui.no.funnyholderthingy.UIDrag
-local function C_11()
-local script = G2L["11"];
+task.spawn(C_f);
+-- StarterGui.no.funnyholderthingy.TextButton.UIDrag
+local function C_13()
+local script = G2L["13"];
 	-- Made by Real_IceyDev (@lceyDex) --
 	-- Simple UI dragger (PC Only/Any device that has a mouse) --
 	
@@ -325,6 +379,6 @@ local script = G2L["11"];
 		end
 	end)
 end;
-task.spawn(C_11);
+task.spawn(C_13);
 
 return G2L["1"], require;
