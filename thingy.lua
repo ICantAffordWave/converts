@@ -263,6 +263,7 @@ local script = G2L["f"];
 	local threads = {}
 	local mouse = plr:GetMouse()
 	local networkping = plr:GetNetworkPing()
+	local rmcc = frame:WaitForChild("ae")
 	local start, stop, reanimate, close = frame:WaitForChild("yessir"), frame:WaitForChild("nuhuh"), frame:WaitForChild("fairly"), frame:WaitForChild("close")
 	start.Visible = false
 	stop.Visible = false
@@ -333,6 +334,7 @@ local script = G2L["f"];
 	end)
 	open.Activated:Connect(function()
 		frame.Visible = true
+		frame.Position = UDim2.fromOffset(mouse.X, mouse.Y)
 		frame2.Visible = false
 	end)
 	
