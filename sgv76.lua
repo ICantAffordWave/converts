@@ -1243,9 +1243,9 @@ function GetAccessory(n, d)
 -- may do recursively
 	for i,v in pairs(char:GetChildren()) do
 	-- yes
-	if v:IsA("Accessory") then
+	if v:IsA("Accessory") and v:FindFirstChild("Handle") then
 	local h = v:WaitForChild("Handle")
-	local mesh = h:FindFirstChild("SpecialMesh")
+	local mesh = h:FindFirstChildOfClass("SpecialMesh")
 	if (mesh and hats_1[d].AssetId == mesh.MeshId) or (h:IsA("MeshPart") and hats_1[d].AssetId == h.MeshId) then
 				return h
 			end
