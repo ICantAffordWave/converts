@@ -765,9 +765,16 @@ function bosschatfunc(text,color,watval)
 	end))
 end
 
-FELOADLIBRARY = {}
-loadstring(game:GetObjects("rbxassetid://5209815302")[1].Source)()
-local Create = FELOADLIBRARY.Create
+local Create = function(className)
+	return function(props)
+		local obj = Instance.new(className)
+		for k, v in pairs(props or {}) do if k ~= "Parent" then obj[k] = v end end
+		if props and props.Parent then obj.Parent = props.Parent end
+		pcall(function() for _, c in ipairs(props and props[1] or {}) do c.Parent = obj end end)
+		return obj
+	end
+end
+
 
 CFuncs = {	
 	["Part"] = {
