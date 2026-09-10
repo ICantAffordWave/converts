@@ -3,7 +3,56 @@ task.wait(2.5)
 game:GetService("StarterGui"):SetCoreGuiEnabled(Enum.CoreGuiType.Health, false)
 print"Hided healthbar (fGUI element, not player healthbar(s) btw)"
 local Player = game:GetService("Players").LocalPlayer --<=== Replace With Your Name
-
+local root111 = "Syntax63/Spectrum"
+local root222 = "Syntax63"
+if not isfolder(root222) then makefolder(root222) end
+if not isfolder(root111) then makefolder(root111) end
+local assets = {
+ {Name = "Syntax63/Spectrum/FALLENX.mp3", URL = "https://files.catbox.moe/07z3pw.mp3"};
+ {Name = "Syntax63/Spectrum/MAYHEM.mp3", URL = "https://files.catbox.moe/uo2e9w.mp3"};
+ {Name = "Syntax63/Spectrum/PLAGUES.mp3", URL = "https://files.catbox.moe/28c6ya.mp3"};
+ {Name = "Syntax63/Spectrum/PURITY.mp3", URL = "https://files.catbox.moe/ay1txj.mp3"};
+ {Name = "Syntax63/Spectrum/RAINBOW.mp3", URL = "https://files.catbox.moe/uu8skw.mp3"};
+ {Name = "Syntax63/Spectrum/STRESSED.mp3", URL = "https://files.catbox.moe/6y4hjt.mp3"};
+ {Name = "Syntax63/Spectrum/SUBLIMINAL.mp3", URL = "https://files.catbox.moe/cdcltl.mp3"};
+ {Name = "Syntax63/Spectrum/UNKNOWN.mp3", URL = "https://files.catbox.moe/2nuf8l.mp3"};
+ {Name = "Syntax63/Spectrum/UNSTABLE.mp3", URL = "https://files.catbox.moe/8gtj1v.mp3"};
+ {Name = "Syntax63/Spectrum/DESTINY.mp3", URL = "https://files.catbox.moe/btfyz6.mp3"};
+ {Name = "Syntax63/Spectrum/CALAMITY.mp3", URL = "https://files.catbox.moe/ujmlu7.mp3"};
+};
+function httpget(url)
+	local req = (request)
+	if req then
+		local response = req({Url = url, Method = "GET"})
+		if response.StatusCode ~= 200 then
+			warn("failed to get url "..url.." cuz "..tostring(response.Body).."! ts might be fatal!")
+			return nil
+		else
+			warn("got url "..url.." successfully!")
+			return response.Body
+		end
+	else
+		local p, c = pcall(function() return game:HttpGet(url) end)
+		if p and c then return c else return nil end
+	end
+end
+for i, v in ipairs(assets) do
+	if v.URL then
+	-- check if we have file
+	   local has, lol = pcall(function() return readfile(v.Name) end)
+	   
+		if has then
+		warn("skipped file "..i.."/"..#assets.."!")
+			continue
+		end
+		local suc, dat = pcall(function() warn("Getting file "..i.."/"..#assets.."!") return httpget(v.URL) end)
+		if suc and dat then
+			writefile(v.Name, dat)
+		else
+			warn("failed to download url: "..v.URL.."!")
+		end
+	end
+end
 local UserInputService = game:GetService("UserInputService")
 local CAS = game:GetService("ContextActionService")
 local Mouse,mouse = Player:GetMouse(), Player:GetMouse()
@@ -84,7 +133,7 @@ For alpha press B < For Cata press B < P for diversial
 ---- Sources and functions might be taken from others
 
 -- Nebula stuff --
-local S = setmetatable({},{__index = function(s,i) return game:service(i) end})
+local S = setmetatable({},{__index = function(s,i) return game:GetService(i) end})
 local CF = {N=CFrame.new,A=CFrame.Angles,fEA=CFrame.fromEulerAnglesXYZ}
 local V3 = {N=Vector3.new,FNI=Vector3.FromNormalId,A=Vector3.FromAxis}
 local M = {C=math.cos,R=math.rad,S=math.sin,P=math.pi,RNG=math.random,MRS=math.randomseed,H=math.huge,RRNG = function(min,max,div) return math.rad(math.random(min,max)/(div or 1)) end}
@@ -99,7 +148,7 @@ local FXFolder = Instance.new("Folder")
 FXFolder.Parent = nil
 local Alpha = .3
 
-NewInstance = function(instance,parent,properties)
+local NewInstance = function(instance,parent,properties)
 	local inst = Instance.new(instance)
 	inst.Parent = parent
 	if(properties)then
@@ -358,27 +407,27 @@ function newTheme(ID,timepos,pitch,vol)
 	kanz.Pitch = pitch
 	pcall(function()
 		if ID == "rbxassetid://415898123" and readfile("SPECTRUM/MAYHEM.mp3") then
-			ID = getcustomasset("SPECTRUM/MAYHEM.mp3")
+			ID = getcustomasset(root222.."/".."MAYHEM.mp3")
 		elseif ID == "rbxassetid://1747430851" and readfile("SPECTRUM/RAINBOW.mp3") then
-			ID = getcustomasset("SPECTRUM/RAINBOW.mp3")	
+			ID = getcustomasset(root222.."/".."RAINBOW.mp3")	
 		elseif ID == "rbxassetid://1702473314" and readfile("SPECTRUM/MEMER.mp3") then
-			ID = getcustomasset("SPECTRUM/MEMER.mp3")	
+			ID = getcustomasset(root222.."/".."MEMER.mp3")	
 		elseif ID == "rbxassetid://1119453744" and readfile("SPECTRUM/PURITY.mp3") then
-			ID = getcustomasset("SPECTRUM/PURITY.mp3")	
+			ID = getcustomasset(root222.."/".."PURITY.mp3")	
 		elseif ID == "rbxassetid://661079869" and readfile("SPECTRUM/DIVINITY.mp3") then
-			ID = getcustomasset("SPECTRUM/DIVINITY.mp3")
+			ID = getcustomasset(root222.."/".."DIVINITY.mp3")
 		elseif ID == "rbxassetid://1369263130" and readfile("SPECTRUM/CHAOS.mp3") then
-			ID = getcustomasset("SPECTRUM/CHAOS.mp3")	
+			ID = getcustomasset(root222.."/".."CHAOS.mp3")	
 		elseif ID == "rbxassetid://798163149" and readfile("SPECTRUM/INFECTION.mp3") then
-			ID = getcustomasset("SPECTRUM/INFECTION.mp3")	
+			ID = getcustomasset(root222.."/".."INFECTION.mp3")	
 		elseif ID == "rbxassetid://577543579" and readfile("SPECTRUM/PLAGUES.mp3") then
-			ID = getcustomasset("SPECTRUM/PLAGUES.mp3")	
+			ID = getcustomasset(root222.."/".."PLAGUES.mp3")	
 		elseif ID == "rbxassetid://1283869370" and readfile("SPECTRUM/CORRUPTION.mp3") then
-			ID = getcustomasset("SPECTRUM/CORRUPTION.mp3")
+			ID = getcustomasset(root222.."/".."CORRUPTION.mp3")
 		elseif ID == "rbxassetid://603567552" and readfile("SPECTRUM/SUBLIMINAL.mp3") then
-			ID = getcustomasset("SPECTRUM/SUBLIMINAL.mp3")
+			ID = getcustomasset(root222.."/".."SUBLIMINAL.mp3")
 		elseif ID == "rbxassetid://1861780345" and readfile("SPECTRUM/UNKNOWN.mp3") then
-			ID = getcustomasset("SPECTRUM/UNKNOWN.mp3")
+			ID = getcustomasset(root222.."/"..UNKNOWN.mp3")
 		end
 	end)
 	kanz.SoundId = ID
@@ -403,17 +452,17 @@ function newThemeCust(ID,timepos,pitch,vol)
 	kanz.Pitch = pitch
 	pcall(function()
 		if ID == "rbxassetid://1485663990" and readfile("SPECTRUM/THEORIES.mp3") then
-			ID = getcustomasset("SPECTRUM/THEORIES.mp3")
+			ID = getcustomasset(root222.."/"..THEORIES.mp3")
 		elseif ID == "rbxassetid://723652641" and readfile("SPECTRUM/STRESSED.mp3") then
-			ID = getcustomasset("SPECTRUM/STRESSED.mp3")
+			ID = getcustomasset(root222.."/".."STRESSED.mp3")
 		elseif ID == "rbxassetid://1505487022" and readfile("SPECTRUM/FALLENX.mp3") then
-			ID = getcustomasset("SPECTRUM/FALLENX.mp3")
+			ID = getcustomasset(root222.."/".."FALLENX.mp3")
 		elseif ID == "rbxassetid://1359036559" and readfile("SPECTRUM/CALAMITY.mp3") then
-			ID = getcustomasset("SPECTRUM/CALAMITY.mp3")
+			ID = getcustomasset(root222.."/".."CALAMITY.mp3")
 		elseif ID == "rbxassetid://899090278" and readfile("SPECTRUM/UNSTABLE.mp3") then
-			ID = getcustomasset("SPECTRUM/UNSTABLE.mp3")
+			ID = getcustomasset(root222.."/".."UNSTABLE.mp3")
 		elseif ID == "rbxassetid://1495032271" and readfile("SPECTRUM/DESTINY.mp3") then
-			ID = getcustomasset("SPECTRUM/DESTINY.mp3")	
+			ID = getcustomasset(root222.."/".."DESTINY.mp3")	
 		end
 	end)
 	kanz.SoundId = ID
@@ -992,7 +1041,7 @@ gui = function(GuiType, parent, text, backtrans, backcol, pos, size)
 	return gui
 end
 --------------------------- GUI STUFF
-local basgui = it("ScreenGui")
+local basgui = it("GuiMain")
 basgui.Parent = CoreGui
 basgui.Name = "VISgui"
 local fullscreenz = it("Frame")
@@ -1189,22 +1238,24 @@ function GetAccessoryWeld(h)
 		return h:FindFirstChild("AccessoryWeld")
 	end
 end
-function GetAccessory(n, d)
-	if char:FindFirstChild(n) and char[n]:IsA("Accessory") and char[n]:FindFirstChild("Handle") then
-		local h = char[n]:FindFirstChild("Handle")
-		local mesh = h:FindFirstChildOfClass("SpecialMesh")
-		if d then
-			if (mesh and hats_1[d].AssetId == mesh.MeshId) or (h:IsA("MeshPart") and hats_1[d].AssetId == h.MeshId) then
+function GetAccessory(n, d) 
+-- n is added for compat layer too lazy cuz i did before "AccessoryName", "index"
+-- may do recursively
+	for i,v in pairs(char:GetChildren()) do
+	-- yes
+	if v:IsA("Accessory") then
+	local h = v:WaitForChild("Handle")
+	local mesh = h:FindFirstChild("SpecialMesh")
+	if (mesh and hats_1[d].AssetId == mesh.MeshId) or (h:IsA("MeshPart") and hats_1[d].AssetId == h.MeshId) then
 				return h
 			end
-			return nil
-        else
-			return h
-	    end
+		end
 	end
+end
 end
 --------------
 -------------- ground effect
+local noCFrame = CFrame.new(0, 9e9, 0)
 local cen = CreateParta(m,1,1,"SmoothPlastic",BrickColor.random())
 CreateWeld(cen,root,cen,0,3,0,math.rad(0),math.rad(0),math.rad(0),0,0,0,math.rad(0),math.rad(0),math.rad(0))
 local effar = Instance.new("ParticleEmitter",cen)
