@@ -2657,44 +2657,13 @@ local bg=Instance.new("BodyGyro")
 
 
 
---------- SazEreno's Artificial HB --------------
-ArtificialHB = Instance.new("BindableEvent", script)
-ArtificialHB.Name = "ArtificialHB"
-Frame_Speed = 1 / 60
-frame = Frame_Speed
-tf = 0
-allowframeloss = false
-tossremainder = false
-lastframe = tick()
-ArtificialHB:Fire()
-
-game:GetService("RunService").Heartbeat:Connect(function(s, p)
-	tf = tf + s
-	if tf >= frame then
-		if allowframeloss then
-			ArtificialHB:Fire()
-			lastframe = tick()
-		else
-			for i = 1, math.floor(tf / frame) do
-				ArtificialHB:Fire()
-			end
-			lastframe = tick()
-		end
-		if tossremainder then
-			tf = 0
-		else
-			tf = tf - frame * math.floor(tf / frame)
-		end
-	end
-end)
-
 ------------------
 function swait(num)
 	if num == 0 or num == nil then
-		ArtificialHB.Event:Wait()
+		game:GetService("RunService").RenderStepped:Wait()
 	else
 		for i = 1, num do
-			ArtificialHB.Event:Wait()
+			game:GetService("RunService").RenderStepped:Wait()
 		end
 	end
 end
