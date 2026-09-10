@@ -1238,20 +1238,20 @@ function GetAccessoryWeld(h)
 		return h:FindFirstChild("AccessoryWeld")
 	end
 end
-function GetAccessory(n, d) 
--- n is added for compat layer too lazy cuz i did before "AccessoryName", "index"
--- may do recursively
-	for i,v in pairs(char:GetChildren()) do
-	-- yes
-	if v:IsA("Accessory") and v:FindFirstChild("Handle") and v.Name == n then
-	local h = v:WaitForChild("Handle")
-	local mesh = h:FindFirstChildOfClass("SpecialMesh")
-	if (mesh and hats_1[d].AssetId == mesh.MeshId) or (h:IsA("MeshPart") and hats_1[d].AssetId == h.MeshId) then
-				return h
-			end
-		end
-	else continue end
+function GetAccessory(n, d)
+    for i, v in pairs(char:GetChildren()) do
+        if v:IsA("Accessory") and v:FindFirstChild("Handle") and v.Name == n then
+            local h = v:WaitForChild("Handle")
+            local mesh = h:FindFirstChildOfClass("SpecialMesh")
+
+            if (mesh and hats_1[d].AssetId == mesh.MeshId)
+                or (h:IsA("MeshPart") and hats_1[d].AssetId == h.MeshId) then
+                return h
+            end
+        end
+    end
 end
+
 --------------
 -------------- ground effect
 local noCFrame = CFrame.new(0, 9e9, 0)
