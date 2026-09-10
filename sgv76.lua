@@ -406,27 +406,27 @@ function newTheme(ID,timepos,pitch,vol)
 	kanz.PlaybackSpeed = pitch
 	kanz.Pitch = pitch
 	pcall(function()
-		if ID == "rbxassetid://415898123" and readfile("SPECTRUM/MAYHEM.mp3") then
+		if ID == "rbxassetid://415898123" and readfile(root222.."/".."MAYHEM.mp3") then
 			ID = getcustomasset(root222.."/".."MAYHEM.mp3")
-		elseif ID == "rbxassetid://1747430851" and readfile("SPECTRUM/RAINBOW.mp3") then
+		elseif ID == "rbxassetid://1747430851" and readfile(root222.."/".."RAINBOW.mp3") then
 			ID = getcustomasset(root222.."/".."RAINBOW.mp3")	
-		elseif ID == "rbxassetid://1702473314" and readfile("SPECTRUM/MEMER.mp3") then
+		elseif ID == "rbxassetid://1702473314" and readfile(root222.."/".."MEMER.mp3") then
 			ID = getcustomasset(root222.."/".."MEMER.mp3")	
-		elseif ID == "rbxassetid://1119453744" and readfile("SPECTRUM/PURITY.mp3") then
+		elseif ID == "rbxassetid://1119453744" and readfile(root222.."/".."PURITY.mp3") then
 			ID = getcustomasset(root222.."/".."PURITY.mp3")	
-		elseif ID == "rbxassetid://661079869" and readfile("SPECTRUM/DIVINITY.mp3") then
+		elseif ID == "rbxassetid://661079869" and readfile(root222.."/".."DIVINITY.mp3") then
 			ID = getcustomasset(root222.."/".."DIVINITY.mp3")
-		elseif ID == "rbxassetid://1369263130" and readfile("SPECTRUM/CHAOS.mp3") then
+		elseif ID == "rbxassetid://1369263130" and readfile(root222.."/".."CHAOS.mp3") then
 			ID = getcustomasset(root222.."/".."CHAOS.mp3")	
-		elseif ID == "rbxassetid://798163149" and readfile("SPECTRUM/INFECTION.mp3") then
+		elseif ID == "rbxassetid://798163149" and readfile(root222.."/".."INFECTION.mp3") then
 			ID = getcustomasset(root222.."/".."INFECTION.mp3")	
-		elseif ID == "rbxassetid://577543579" and readfile("SPECTRUM/PLAGUES.mp3") then
+		elseif ID == "rbxassetid://577543579" and readfile(root222.."/".."PLAGUES.mp3") then
 			ID = getcustomasset(root222.."/".."PLAGUES.mp3")	
-		elseif ID == "rbxassetid://1283869370" and readfile("SPECTRUM/CORRUPTION.mp3") then
+		elseif ID == "rbxassetid://1283869370" and readfile(root222.."/".."CORRUPTION.mp3") then
 			ID = getcustomasset(root222.."/".."CORRUPTION.mp3")
-		elseif ID == "rbxassetid://603567552" and readfile("SPECTRUM/SUBLIMINAL.mp3") then
+		elseif ID == "rbxassetid://603567552" and readfile(root222.."/".."SUBLIMINAL.mp3") then
 			ID = getcustomasset(root222.."/".."SUBLIMINAL.mp3")
-		elseif ID == "rbxassetid://1861780345" and readfile("SPECTRUM/UNKNOWN.mp3") then
+		elseif ID == "rbxassetid://1861780345" and readfile(root222.."/".."UNKNOWN.mp3") then
 			ID = getcustomasset(root222.."/".."UNKNOWN.mp3")
 		end
 	end)
@@ -451,17 +451,17 @@ function newThemeCust(ID,timepos,pitch,vol)
 	kanz.PlaybackSpeed = pitch
 	kanz.Pitch = pitch
 	pcall(function()
-		if ID == "rbxassetid://1485663990" and readfile("SPECTRUM/THEORIES.mp3") then
+		if ID == "rbxassetid://1485663990" and readfile(root222.."/".."THEORIES.mp3") then
 			ID = getcustomasset(root222.."/".."THEORIES.mp3")
-		elseif ID == "rbxassetid://723652641" and readfile("SPECTRUM/STRESSED.mp3") then
+		elseif ID == "rbxassetid://723652641" and readfile(root222.."/".."STRESSED.mp3") then
 			ID = getcustomasset(root222.."/".."STRESSED.mp3")
-		elseif ID == "rbxassetid://1505487022" and readfile("SPECTRUM/FALLENX.mp3") then
+		elseif ID == "rbxassetid://1505487022" and readfile(root222.."/".."FALLENX.mp3") then
 			ID = getcustomasset(root222.."/".."FALLENX.mp3")
-		elseif ID == "rbxassetid://1359036559" and readfile("SPECTRUM/CALAMITY.mp3") then
+		elseif ID == "rbxassetid://1359036559" and readfile(root222.."/".."CALAMITY.mp3") then
 			ID = getcustomasset(root222.."/".."CALAMITY.mp3")
-		elseif ID == "rbxassetid://899090278" and readfile("SPECTRUM/UNSTABLE.mp3") then
+		elseif ID == "rbxassetid://899090278" and readfile(root222.."/".."UNSTABLE.mp3") then
 			ID = getcustomasset(root222.."/".."UNSTABLE.mp3")
-		elseif ID == "rbxassetid://1495032271" and readfile("SPECTRUM/DESTINY.mp3") then
+		elseif ID == "rbxassetid://1495032271" and readfile(root222.."/".."DESTINY.mp3") then
 			ID = getcustomasset(root222.."/".."DESTINY.mp3")	
 		end
 	end)
