@@ -427,7 +427,7 @@ function newTheme(ID,timepos,pitch,vol)
 		elseif ID == "rbxassetid://603567552" and readfile("SPECTRUM/SUBLIMINAL.mp3") then
 			ID = getcustomasset(root222.."/".."SUBLIMINAL.mp3")
 		elseif ID == "rbxassetid://1861780345" and readfile("SPECTRUM/UNKNOWN.mp3") then
-			ID = getcustomasset(root222.."/"..UNKNOWN.mp3")
+			ID = getcustomasset(root222.."/".."UNKNOWN.mp3")
 		end
 	end)
 	kanz.SoundId = ID
@@ -452,7 +452,7 @@ function newThemeCust(ID,timepos,pitch,vol)
 	kanz.Pitch = pitch
 	pcall(function()
 		if ID == "rbxassetid://1485663990" and readfile("SPECTRUM/THEORIES.mp3") then
-			ID = getcustomasset(root222.."/"..THEORIES.mp3")
+			ID = getcustomasset(root222.."/".."THEORIES.mp3")
 		elseif ID == "rbxassetid://723652641" and readfile("SPECTRUM/STRESSED.mp3") then
 			ID = getcustomasset(root222.."/".."STRESSED.mp3")
 		elseif ID == "rbxassetid://1505487022" and readfile("SPECTRUM/FALLENX.mp3") then
