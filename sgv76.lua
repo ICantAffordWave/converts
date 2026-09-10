@@ -25,7 +25,7 @@ function httpget(url)
 	if req then
 		local response = req({Url = url, Method = "GET"})
 		if response.StatusCode ~= 200 then
-			warn("failed to get url "..url.." cuz "..tostring(response.Body).."! ts might be fatal!")
+			warn("failed to get url "..url.." cuz "..tostring(response.Body) or "no body what".."! ts might be fatal!")
 			return nil
 		else
 			warn("got url "..url.." successfully!")
@@ -33,7 +33,7 @@ function httpget(url)
 		end
 	else
 		local p, c = pcall(function() return game:HttpGet(url) end)
-		if p and c then return c else return nil end
+		if p and c then return c else warn("failed to get url "..url.."! reason: "..tostring(c) or "no body what".."! ts might be fatal!") return nil end
 	end
 end
 for i, v in ipairs(assets) do
@@ -390,7 +390,7 @@ kan.Volume = 1.25
 kan.TimePosition = 0
 kan.PlaybackSpeed = 1
 kan.Pitch = 1
-kan.SoundId = getcustomasset("SPECTRUM/MAYHEM.mp3")
+kan.SoundId = getcustomasset(root222.."/".."MAYHEM.mp3")
 kan.Name = "wrecked"
 kan.Looped = true
 kan:Play()
@@ -1243,14 +1243,14 @@ function GetAccessory(n, d)
 -- may do recursively
 	for i,v in pairs(char:GetChildren()) do
 	-- yes
-	if v:IsA("Accessory") and v:FindFirstChild("Handle") then
+	if v:IsA("Accessory") and v:FindFirstChild("Handle") and v.Name == n then
 	local h = v:WaitForChild("Handle")
 	local mesh = h:FindFirstChildOfClass("SpecialMesh")
 	if (mesh and hats_1[d].AssetId == mesh.MeshId) or (h:IsA("MeshPart") and hats_1[d].AssetId == h.MeshId) then
 				return h
 			end
 		end
-	end
+	else continue end
 end
 --------------
 -------------- ground effect
