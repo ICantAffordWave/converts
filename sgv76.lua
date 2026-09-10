@@ -1252,7 +1252,6 @@ function GetAccessory(n, d)
 		end
 	end
 end
-end
 --------------
 -------------- ground effect
 local noCFrame = CFrame.new(0, 9e9, 0)
