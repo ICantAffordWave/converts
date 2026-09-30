@@ -1,7 +1,6 @@
 
 local G2L = {};
-cloneref = cloneref or function(o) return o end
-gethui = gethui or function() cloneref(game:GetService("CoreGui")) end
+
 -- StarterGui.no
 G2L["1"] = Instance.new("ScreenGui", gethui());
 G2L["1"]["Name"] = [[no]];
@@ -275,6 +274,7 @@ local script = G2L["f"];
 		"cmd";
 		"-pd";
 		"-net";
+		"-ch";
 	}
 	local mainthread = nil
 	local threads = {}
@@ -294,13 +294,46 @@ local script = G2L["f"];
 		if yea and yea2 and nolol == false then
 			task.wait(3.25 * (math.clamp(networkping * 2, 1, math.huge)))
 			local yo, wut = pcall(function() 
-				return loadstring(httpget(loadsrc))()
+local Global = (getgenv and getgenv()) or shared
+Global.GelatekReanimateConfig = {
+    -- [[ Rig Settings ]] --
+    ["AnimationsDisabled"] = true,
+    ["R15ToR6"] = true,
+    ["DontBreakHairWelds"] = true,
+    ["PermanentDeath"] = true,
+    ["Headless"] = false,
+    ["TeleportBackWhenVoided"] = true,
+    
+    -- [[ Reanimation Settings ]] --
+    ["AlignReanimate"] = false,
+    ["FullForceAlign"] = false,
+    ["FasterHeartbeat"] = false,
+    ["DynamicalVelocity"] = false,
+    ["DisableTweaks"] = false,
+    
+    -- [[ Optimization ]] --
+    ["OptimizeGame"] = false,
+
+    -- [[ Miscellacious ]] --
+    ["LoadLibrary"] = false,
+    ["DetailedCredits"] = false,
+    
+    -- [[ Flinging Methods ]] --
+    ["TorsoFling"] = false,
+    ["BulletEnabled"] = false,
+    ["BulletConfig"] = {
+        ["RunAfterReanimate"] = false,
+        ["LockBulletOnTorso"] = false
+    }
+}
+return loadstring(game:HttpGet("https://raw.githubusercontent.com/Gelatekussy/GelatekReanimate/main/Main.lua"))()
+
 			end)
 			if yo then
 				nolol = true
 				print("ok")
 				reminder.Visible = true
-				task.wait(7.5)
+				task.wait(game.Players.RespawnTime + 2.5)
 	            reminder.Visible = false
 				reanimated = true
 				reanimate.Visible = false
