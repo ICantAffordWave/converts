@@ -473,11 +473,11 @@ function newThemeCust(ID,timepos,pitch,vol)
 		
 	elseif ID == "rbxassetid://1495032271" and isfile(rootf .. "/DESTINY.mp3") then
 		ID = getcustomasset(rootf .. "/DESTINY.mp3")
-	end
 	-- "rbxassetid://1504604335"
 	elseif ID == "rbxassetid://1504604335" and isfile(rootf .. "/CATASTROPHE.mp3") then
 		ID = getcustomasset(rootf .. "/CATASTROPHE.mp3")
 	end
+    
 end)
 
 	kanz.SoundId = ID
