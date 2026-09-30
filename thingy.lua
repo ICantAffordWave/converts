@@ -1,8 +1,9 @@
 
 local G2L = {};
-
+cloneref = cloneref or function(o) return o end
+gethui = gethui or function() cloneref(game:GetService("CoreGui")) end
 -- StarterGui.no
-G2L["1"] = Instance.new("ScreenGui", game:GetService("Players").LocalPlayer:WaitForChild("PlayerGui"));
+G2L["1"] = Instance.new("ScreenGui", gethui());
 G2L["1"]["Name"] = [[no]];
 G2L["1"]["ZIndexBehavior"] = Enum.ZIndexBehavior.Sibling;
 
@@ -189,6 +190,22 @@ G2L["13"]["Name"] = [[UIDrag]];
 
 
 -- StarterGui.no.nonion.UIDrag
+function httpget(url)
+	local req = (request)
+	if req then
+		local response = req({Url = url, Method = "GET"})
+		if response.StatusCode ~= 200 then
+			warn("failed to get url "..url.." cuz "..tostring(response.Body).."! ts might be fatal!")
+			return nil
+		else
+			warn("got url "..url.." successfully!")
+			return response.Body
+		end
+	else
+		local p, c = pcall(function() return game:HttpGet(url) end)
+		if p and c then return c else return nil end
+	end
+end
 local function C_a()
 local script = G2L["a"];
 	-- Made by Real_IceyDev (@lceyDex) --
@@ -263,7 +280,6 @@ local script = G2L["f"];
 	local threads = {}
 	local mouse = plr:GetMouse()
 	local networkping = plr:GetNetworkPing()
-	local rmcc = frame:WaitForChild("ae")
 	local start, stop, reanimate, close = frame:WaitForChild("yessir"), frame:WaitForChild("nuhuh"), frame:WaitForChild("fairly"), frame:WaitForChild("close")
 	start.Visible = false
 	stop.Visible = false
@@ -276,9 +292,9 @@ local script = G2L["f"];
 		local yea, errlol = pcall(function() remote01:FireServer(table.unpack(args1)) end)
 		local yea2, errlol = pcall(function() remote01:FireServer(table.unpack(args2)) end)
 		if yea and yea2 and nolol == false then
-			task.wait(3.25 * (math.clamp(networkping * 0.85, 1, math.huge)))
+			task.wait(3.25 * (math.clamp(networkping * 2, 1, math.huge)))
 			local yo, wut = pcall(function() 
-				loadstring(game:HttpGet(loadsrc))()
+				return loadstring(httpget(loadsrc))()
 			end)
 			if yo then
 				nolol = true
@@ -305,7 +321,15 @@ local script = G2L["f"];
 			print("no 2")
 		else
 			local ran, result = pcall(function() 
-				mainthread = task.spawn(function() loadstring(game:HttpGet(scriptsrc))() end)
+				local source = httpget(scriptsrc)
+
+assert(source, "httpget returned nil")
+assert(type(loadstring) == "function", "loadstring is nil")
+
+local fn, err = loadstring(source)
+assert(fn, "loadstring failed: " .. tostring(err))
+
+return fn()
 			end)
 			if ran then
 				rancc = true
@@ -324,7 +348,7 @@ local script = G2L["f"];
 		nolol = false
 		reanimate.Visible = true
 		-- solution
-		task.cancel(mainthread)
+	--	task.cancel(mainthread)
 		game:GetService("TeleportService"):TeleportToPlaceInstance(game.PlaceId, game.JobId, game.Players.LocalPlayer)
 	end)
 	close.Activated:Connect(function()
