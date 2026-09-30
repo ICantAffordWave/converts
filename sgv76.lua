@@ -390,7 +390,8 @@ kan.Volume = 1.25
 kan.TimePosition = 0
 kan.PlaybackSpeed = 1
 kan.Pitch = 1
-kan.SoundId = getcustomasset(root222.."/".."MAYHEM.mp3")
+local rootf = root111
+kan.SoundId = getcustomasset(rootf.."/".."MAYHEM.mp3")
 kan.Name = "wrecked"
 kan.Looped = true
 kan:Play()
@@ -406,28 +407,28 @@ function newTheme(ID,timepos,pitch,vol)
 	kanz.PlaybackSpeed = pitch
 	kanz.Pitch = pitch
 	pcall(function()
-	if ID == "rbxassetid://415898123" and isfile(root222 .. "/MAYHEM.mp3") then
-		ID = getcustomasset(root222 .. "/MAYHEM.mp3")
-	elseif ID == "rbxassetid://1747430851" and isfile(root222 .. "/RAINBOW.mp3") then
-		ID = getcustomasset(root222 .. "/RAINBOW.mp3")
-	elseif ID == "rbxassetid://1702473314" and isfile(root222 .. "/MEMER.mp3") then
-		ID = getcustomasset(root222 .. "/MEMER.mp3")
-	elseif ID == "rbxassetid://1119453744" and isfile(root222 .. "/PURITY.mp3") then
-		ID = getcustomasset(root222 .. "/PURITY.mp3")
-	elseif ID == "rbxassetid://661079869" and isfile(root222 .. "/DIVINITY.mp3") then
-		ID = getcustomasset(root222 .. "/DIVINITY.mp3")
-	elseif ID == "rbxassetid://1369263130" and isfile(root222 .. "/CHAOS.mp3") then
-		ID = getcustomasset(root222 .. "/CHAOS.mp3")
-	elseif ID == "rbxassetid://798163149" and isfile(root222 .. "/INFECTION.mp3") then
-		ID = getcustomasset(root222 .. "/INFECTION.mp3")
-	elseif ID == "rbxassetid://577543579" and isfile(root222 .. "/PLAGUES.mp3") then
-		ID = getcustomasset(root222 .. "/PLAGUES.mp3")
-	elseif ID == "rbxassetid://1283869370" and isfile(root222 .. "/CORRUPTION.mp3") then
-		ID = getcustomasset(root222 .. "/CORRUPTION.mp3")
-	elseif ID == "rbxassetid://603567552" and isfile(root222 .. "/SUBLIMINAL.mp3") then
-		ID = getcustomasset(root222 .. "/SUBLIMINAL.mp3")
-	elseif ID == "rbxassetid://1861780345" and isfile(root222 .. "/UNKNOWN.mp3") then
-		ID = getcustomasset(root222 .. "/UNKNOWN.mp3")
+	if ID == "rbxassetid://415898123" and isfile(rootf.. "/MAYHEM.mp3") then
+		ID = getcustomasset(rootf .. "/MAYHEM.mp3")
+	elseif ID == "rbxassetid://1747430851" and isfile(rootf .. "/RAINBOW.mp3") then
+		ID = getcustomasset(rootf .. "/RAINBOW.mp3")
+	elseif ID == "rbxassetid://1702473314" and isfile(rootf .. "/MEMER.mp3") then
+		ID = getcustomasset(rootf.. "/MEMER.mp3")
+	elseif ID == "rbxassetid://1119453744" and isfile(rootf .. "/PURITY.mp3") then
+		ID = getcustomasset(rootf .. "/PURITY.mp3")
+	elseif ID == "rbxassetid://661079869" and isfile(rootf .. "/DIVINITY.mp3") then
+		ID = getcustomasset(rootf .. "/DIVINITY.mp3")
+	elseif ID == "rbxassetid://1369263130" and isfile(rootf .. "/CHAOS.mp3") then
+		ID = getcustomasset(rootf.. "/CHAOS.mp3")
+	elseif ID == "rbxassetid://798163149" and isfile(rootf .. "/INFECTION.mp3") then
+		ID = getcustomasset(rootf .. "/INFECTION.mp3")
+	elseif ID == "rbxassetid://577543579" and isfile(rootf .. "/PLAGUES.mp3") then
+		ID = getcustomasset(rootf .. "/PLAGUES.mp3")
+	elseif ID == "rbxassetid://1283869370" and isfile(rootf .. "/CORRUPTION.mp3") then
+		ID = getcustomasset(rootf .. "/CORRUPTION.mp3")
+	elseif ID == "rbxassetid://603567552" and isfile(rootf .. "/SUBLIMINAL.mp3") then
+		ID = getcustomasset(rootf .. "/SUBLIMINAL.mp3")
+	elseif ID == "rbxassetid://1861780345" and isfile(rootf .. "/UNKNOWN.mp3") then
+		ID = getcustomasset(rootf .. "/UNKNOWN.mp3")
 	end
 end)
 
@@ -452,18 +453,18 @@ function newThemeCust(ID,timepos,pitch,vol)
 	kanz.PlaybackSpeed = pitch
 	kanz.Pitch = pitch
 	pcall(function()
-	if ID == "rbxassetid://1485663990" and isfile(root222 .. "/THEORIES.mp3") then
-		ID = getcustomasset(root222 .. "/THEORIES.mp3")
-	elseif ID == "rbxassetid://723652641" and isfile(root222 .. "/STRESSED.mp3") then
-		ID = getcustomasset(root222 .. "/STRESSED.mp3")
-	elseif ID == "rbxassetid://1505487022" and isfile(root222 .. "/FALLENX.mp3") then
-		ID = getcustomasset(root222 .. "/FALLENX.mp3")
-	elseif ID == "rbxassetid://1359036559" and isfile(root222 .. "/CALAMITY.mp3") then
-		ID = getcustomasset(root222 .. "/CALAMITY.mp3")
-	elseif ID == "rbxassetid://899090278" and isfile(root222 .. "/UNSTABLE.mp3") then
-		ID = getcustomasset(root222 .. "/UNSTABLE.mp3")
-	elseif ID == "rbxassetid://1495032271" and isfile(root222 .. "/DESTINY.mp3") then
-		ID = getcustomasset(root222 .. "/DESTINY.mp3")
+	if ID == "rbxassetid://1485663990" and isfile(rootf .. "/THEORIES.mp3") then
+		ID = getcustomasset(rootf .. "/THEORIES.mp3")
+	elseif ID == "rbxassetid://723652641" and isfile(rootf .. "/STRESSED.mp3") then
+		ID = getcustomasset(rootf .. "/STRESSED.mp3")
+	elseif ID == "rbxassetid://1505487022" and isfile(rootf .. "/FALLENX.mp3") then
+		ID = getcustomasset(rootf .. "/FALLENX.mp3")
+	elseif ID == "rbxassetid://1359036559" and isfile(rootf.. "/CALAMITY.mp3") then
+		ID = getcustomasset(rootf .. "/CALAMITY.mp3")
+	elseif ID == "rbxassetid://899090278" and isfile(rootf .. "/UNSTABLE.mp3") then
+		ID = getcustomasset(rootf .. "/UNSTABLE.mp3")
+	elseif ID == "rbxassetid://1495032271" and isfile(rootf .. "/DESTINY.mp3") then
+		ID = getcustomasset(rootf .. "/DESTINY.mp3")
 	end
 end)
 
