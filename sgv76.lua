@@ -9,22 +9,25 @@ game:GetService("StarterGui"):SetCoreGuiEnabled(Enum.CoreGuiType.Health, false)
 print"Hided healthbar (fGUI element, not player healthbar(s) btw)"
 local Player = game:GetService("Players").LocalPlayer --<=== Replace With Your Name
 local root111 = "Syntax63/Spectrum"
-local root222 = "Syntax63"
+local root222 = "Syntax63"}
+-- Unknown's catbox file is 404
 if not isfolder(root222) then makefolder(root222) end
 if not isfolder(root111) then makefolder(root111) end
 local assets = {
- {Name = "Syntax63/Spectrum/FALLENX.mp3", URL = "https://files.catbox.moe/07z3pw.mp3"};
- {Name = "Syntax63/Spectrum/MAYHEM.mp3", URL = "https://files.catbox.moe/uo2e9w.mp3"};
- {Name = "Syntax63/Spectrum/PLAGUES.mp3", URL = "https://files.catbox.moe/28c6ya.mp3"};
- {Name = "Syntax63/Spectrum/PURITY.mp3", URL = "https://files.catbox.moe/ay1txj.mp3"};
- {Name = "Syntax63/Spectrum/RAINBOW.mp3", URL = "https://files.catbox.moe/uu8skw.mp3"};
- {Name = "Syntax63/Spectrum/STRESSED.mp3", URL = "https://files.catbox.moe/6y4hjt.mp3"};
- {Name = "Syntax63/Spectrum/SUBLIMINAL.mp3", URL = "https://files.catbox.moe/cdcltl.mp3"};
- {Name = "Syntax63/Spectrum/UNKNOWN.mp3", URL = "https://files.catbox.moe/2nuf8l.mp3"};
- {Name = "Syntax63/Spectrum/UNSTABLE.mp3", URL = "https://files.catbox.moe/8gtj1v.mp3"};
+--https://github.com/ICantAffordWave/sgv76music/raw/refs/heads/main/CATASTROPHE.mp3
+-- DESTINY AND CALAMITY HAVE FILES OVER 25MB, THEY STAY IN CATBOX!!!!!!!
+ {Name = "Syntax63/Spectrum/FALLENX.mp3", URL = "https://github.com/ICantAffordWave/sgv76music/raw/refs/heads/main/FALLENX.mp3"};
+ {Name = "Syntax63/Spectrum/MAYHEM.mp3", URL = "https://github.com/ICantAffordWave/sgv76music/raw/refs/heads/main/MAYHEM.mp3"};
+ {Name = "Syntax63/Spectrum/PLAGUES.mp3", URL = "https://github.com/ICantAffordWave/sgv76music/raw/refs/heads/main/PLAGUES.mp3"};
+ {Name = "Syntax63/Spectrum/PURITY.mp3", URL = "https://github.com/ICantAffordWave/sgv76music/raw/refs/heads/main/PURITY.mp3"};
+ {Name = "Syntax63/Spectrum/RAINBOW.mp3", URL = "https://github.com/ICantAffordWave/sgv76music/raw/refs/heads/main/RAINBOW.mp3"};
+ {Name = "Syntax63/Spectrum/STRESSED.mp3", URL = "https://github.com/ICantAffordWave/sgv76music/raw/refs/heads/main/STRESSED.mp3"};
+ {Name = "Syntax63/Spectrum/SUBLIMINAL.mp3", URL = "https://github.com/ICantAffordWave/sgv76music/raw/refs/heads/main/SUBLIMINAL.mp3"};
+ {Name = "Syntax63/Spectrum/UNKNOWN.mp3", URL = "https://github.com/ICantAffordWave/sgv76music/raw/refs/heads/main/UNKNOWN.mp3"};
+ {Name = "Syntax63/Spectrum/UNSTABLE.mp3", URL = "https://github.com/ICantAffordWave/sgv76music/raw/refs/heads/main/UNSTABLE.mp3"};
  {Name = "Syntax63/Spectrum/DESTINY.mp3", URL = "https://files.catbox.moe/btfyz6.mp3"};
  {Name = "Syntax63/Spectrum/CALAMITY.mp3", URL = "https://files.catbox.moe/ujmlu7.mp3"};
-  {Name = "Syntax63/Spectrum/CATASTROPHE.mp3", URL = "https://files.catbox.moe/azcz67.mp3"};
+  {Name = "Syntax63/Spectrum/CATASTROPHE.mp3", URL = "https://github.com/ICantAffordWave/sgv76music/raw/refs/heads/main/CATASTROPHE.mp3"};
  -- https://files.catbox.moe/azcz67.mp3
 };
 function httpget(url)
@@ -45,8 +48,8 @@ function httpget(url)
 end
 for i, v in ipairs(assets) do
 	if v.URL then
-	-- check if we have file
-	   local has, lol = pcall(function() return readfile(v.Name) end)
+	-- check if we have file 
+	   local has, lol = pcall(function() return isfile(v.Name) end)
 	   
 		if has then
 		warn("skipped file "..i.."/"..#assets.."!")
@@ -13162,4 +13165,3 @@ while true do
 		end
 	end
 end
-
