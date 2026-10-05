@@ -9,7 +9,7 @@ game:GetService("StarterGui"):SetCoreGuiEnabled(Enum.CoreGuiType.Health, false)
 print"Hided healthbar (fGUI element, not player healthbar(s) btw)"
 local Player = game:GetService("Players").LocalPlayer --<=== Replace With Your Name
 local root111 = "Syntax63/Spectrum"
-local root222 = "Syntax63"}
+local root222 = "Syntax63"
 -- Unknown's catbox file is 404
 if not isfolder(root222) then makefolder(root222) end
 if not isfolder(root111) then makefolder(root111) end
